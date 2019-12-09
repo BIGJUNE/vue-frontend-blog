@@ -1,41 +1,44 @@
 <template>
-    <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-    </el-container>
+    <div id="top-nav">
+        <el-menu
+                :default-active="activeIndex2"
+                class="el-menu-demo"
+                mode="horizontal"
+                background-color="#0593d3"
+                text-color="#fff"
+                active-text-color="#ffd04b">
+            <p id="nav-logo">JerryGao的个人博客</p>
+            <el-menu-item index="1">首页</el-menu-item>
+            <el-menu-item index="21">学习分享</el-menu-item>
+            <el-menu-item index="3">日常笔记</el-menu-item>
+            <el-menu-item index="4">About</el-menu-item>
+            <el-menu-item index="5">如何搭建这个博客</el-menu-item>
+        </el-menu>
+    </div>
+
 </template>
 
 <script>
     export default {
-        name: "TopBar"
+        data() {
+            return {
+                activeIndex: '1',
+            };
+        }
     }
 </script>
 
 <style scoped>
-    .el-row {
-        margin-bottom: 20px;
-    &:last-child {
-         margin-bottom: 0;
-     }
+    #nav-logo {
+        font-size: 18px;
+        line-height: 61px;
+        color: #fff;
+        font-family: "Microsoft YaHei UI";
+        float: left;
+        margin: 0 110px 0 45px;
     }
-    .el-col {
-        border-radius: 4px;
-    }
-    .bg-purple-dark {
-        background: #99a9bf;
-    }
-    .bg-purple {
-        background: #d3dce6;
-    }
-    .bg-purple-light {
-        background: #e5e9f2;
-    }
-    .grid-content {
-        border-radius: 4px;
-        min-height: 36px;
-    }
-    .row-bg {
-        padding: 10px 0;
-        background-color: #f9fafc;
+
+    /deep/ .el-submenu__title i {
+        color: #fff;
     }
 </style>
