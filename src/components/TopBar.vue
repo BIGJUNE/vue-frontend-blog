@@ -1,18 +1,25 @@
 <template>
     <div id="top-nav">
         <el-menu
-                :default-active="activeIndex2"
-                class="el-menu-demo"
+                :default-active="activeIndex"
+                class="nav-list"
                 mode="horizontal"
-                background-color="#0593d3"
-                text-color="#fff"
-                active-text-color="#ffd04b">
+                text-color="#000">
             <p id="nav-logo">JerryGao的个人博客</p>
             <el-menu-item index="1">首页</el-menu-item>
             <el-menu-item index="21">学习分享</el-menu-item>
             <el-menu-item index="3">日常笔记</el-menu-item>
             <el-menu-item index="4">About</el-menu-item>
             <el-menu-item index="5">如何搭建这个博客</el-menu-item>
+            <div class="login-btn-wrapper">
+                登录<i class="el-icon-user el-icon--right"></i>
+            </div>
+            <el-input
+                    placeholder="请输入搜索条件"
+                    v-model="input4">
+                <i slot="prefix" class="el-input__icon el-icon-search"></i>
+            </el-input>
+
         </el-menu>
     </div>
 
@@ -30,15 +37,44 @@
 
 <style scoped>
     #nav-logo {
-        font-size: 18px;
+        font-size: 14px;
+        font-weight: bold;
         line-height: 61px;
-        color: #fff;
+        color: #000;
         font-family: "Microsoft YaHei UI";
         float: left;
-        margin: 0 110px 0 45px;
+        margin-right: 50px;
+    }
+
+    #top-nav {
+        width: 1280px;
+        margin: 0 auto;
     }
 
     /deep/ .el-submenu__title i {
         color: #fff;
+    }
+
+    #top-nav .el-input {
+        font-size: 14px;
+        display: inline-block;
+        width: 230px;
+        line-height: 61px;
+        float: right;
+        outline: none;
+    }
+
+    #top-nav .login-btn-wrapper {
+        line-height: 61px;
+        float: right;
+        margin: 0 20px 0 40px;
+        color: #000;
+        font-size: 16px;
+        font-family: "PingFang SC";
+        cursor: pointer;
+    }
+
+    #top-nav .login-btn-wrapper:hover {
+        color: #08a4ff;
     }
 </style>

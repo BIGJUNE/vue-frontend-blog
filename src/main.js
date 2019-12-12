@@ -10,6 +10,6 @@ Vue.component(Select.name, Select);
  */
 
 new Vue({
-  el: '#app',
+  el: '#home',
   render: h => h(App)
 });
