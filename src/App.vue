@@ -79,4 +79,8 @@
     .aside-wrapper {
         height: 100%;
     }
+
+    div:focus{
+        outline:none;
+    }
 </style>

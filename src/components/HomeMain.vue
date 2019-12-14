@@ -7,12 +7,11 @@
             </el-col>
         </el-row>
         <div class="share-paper-wrapper">
-            <el-timeline>
-                <TimeLineItem></TimeLineItem>
-                <TimeLineItem></TimeLineItem>
-                <TimeLineItem></TimeLineItem>
-                <TimeLineItem></TimeLineItem>
-                <TimeLineItem></TimeLineItem>
+            <el-timeline v-for="paper in paper_list" :key="paper">
+                <TimeLineItem v-bind:timestamp="paper.create_time"
+                              v-bind:summary="paper.summary" v-bind:tag_list="paper.tag_list"
+                              v-bind:comment_count="paper.comment_count"
+                              v-bind:read_count="paper.read_count"/>
             </el-timeline>
         </div>
     </div>
@@ -26,6 +25,20 @@
         name: "HomeMain",
         components: {
             TimeLineItem
+        },
+        data() {
+            return {
+                paper_list: Array,
+            };
+        },
+        created: function() {
+            this.$axios.get("http://yapi.demo.qunar.com/mock/37614/v1/papers")
+            .then(function (response) {
+                if (response.data.count > 0) {
+                    this.paper_list = response.data.list;
+                }
+            });
+
         }
     }
 </script>
