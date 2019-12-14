@@ -1,0 +1,7 @@
+const TAG_MAX_AMOUNT = 3;
+const CURRENT_PAPER_MAX_AMOUNT = 5;
+
+export default {
+    TAG_MAX_AMOUNT,
+    CURRENT_PAPER_MAX_AMOUNT
+}

@@ -7,11 +7,14 @@
             </el-col>
         </el-row>
         <div class="share-paper-wrapper">
-            <el-timeline v-for="paper in paper_list" :key="paper">
+            <el-timeline v-for="(paper,index) in paper_list" :key="index">
                 <TimeLineItem v-bind:timestamp="paper.create_time"
-                              v-bind:summary="paper.summary" v-bind:tag_list="paper.tag_list"
+                              v-if="index < CURRENT_PAPER_MAX_AMOUNT"
+                              v-bind:summary="paper.summary"
+                              v-bind:tag_list="paper.tag_list"
                               v-bind:comment_count="paper.comment_count"
-                              v-bind:read_count="paper.read_count"/>
+                              v-bind:read_count="paper.read_count"
+                              v-bind:title="paper.title"/>
             </el-timeline>
         </div>
     </div>
@@ -28,14 +31,16 @@
         },
         data() {
             return {
-                paper_list: Array,
+                paper_list: '',
+                CURRENT_PAPER_MAX_AMOUNT: this.GLOBAL.CURRENT_PAPER_MAX_AMOUNT,
             };
         },
         created: function() {
-            this.$axios.get("http://yapi.demo.qunar.com/mock/37614/v1/papers")
-            .then(function (response) {
-                if (response.data.count > 0) {
-                    this.paper_list = response.data.list;
+            this.$axios.get("/v1/papers")
+            .then( response => {
+                let result = response.data;
+                if (result.data.count > 0) {
+                    this.paper_list = result.data.list;
                 }
             });
 
