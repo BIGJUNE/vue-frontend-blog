@@ -1,6 +1,6 @@
 <template>
     <div class="home-aside">
-        <NoteCard></NoteCard>
+        <NoteCard v-bind:note_list="note_list"></NoteCard>
         <CommentCard></CommentCard>
     </div>
 </template>
@@ -10,7 +10,10 @@
     import CommentCard from "./CommentCard";
     export default {
         name: "HomeAside",
-        components: {CommentCard, NoteCard}
+        components: {CommentCard, NoteCard},
+        props: {
+            note_list: Array
+        }
     }
 </script>
 

@@ -31,19 +31,11 @@
         },
         data() {
             return {
-                paper_list: '',
                 CURRENT_PAPER_MAX_AMOUNT: this.GLOBAL.CURRENT_PAPER_MAX_AMOUNT,
             };
         },
-        created: function() {
-            this.$axios.get("/v1/papers")
-            .then( response => {
-                let result = response.data;
-                if (result.data.count > 0) {
-                    this.paper_list = result.data.list;
-                }
-            });
-
+        props: {
+            paper_list: Array
         }
     }
 </script>

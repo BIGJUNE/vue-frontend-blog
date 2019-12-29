@@ -1,31 +1,34 @@
 <template>
     <div class="comment-card-wrapper">
-        <el-card class="comment-card">
+        <el-card class="comment-card"
+                 >
             <div slot="header" class="clearfix">
                 <span class="panel-title">最新评论</span>
             </div>
-            <a href="#">
+            <div v-loading="true"
+                    element-loading-text="敬请期待"
+                  element-loading-spinner="el-icon-warning">
                 <div class="comment-item">
-                    <h4>测试一下评论</h4>
-                    <p>这是一个真实的品论，哈哈哈其实不是啦。.asd</p>
+                    <h4>还在开发。。。</h4>
+                    <p>评论功能还在开发中，敬请期待</p>
                     <el-divider><i class="el-icon-chat-line-square"/></el-divider>
                 </div>
                 <div class="comment-item">
-                    <h4>测试一下评论</h4>
-                    <p>这是一个真实的品论，哈哈哈其实不是啦。.asd</p>
+                    <h4>还在开发。。。</h4>
+                    <p>评论功能还在开发中，敬请期待</p>
                     <el-divider><i class="el-icon-chat-line-square"/></el-divider>
                 </div>
                 <div class="comment-item">
-                    <h4>测试一下评论</h4>
-                    <p>这是一个真实的品论，哈哈哈其实不是啦。.asd</p>
+                    <h4>还在开发。。。</h4>
+                    <p>评论功能还在开发中，敬请期待</p>
                     <el-divider><i class="el-icon-chat-line-square"/></el-divider>
                 </div>
                 <div class="comment-item">
-                    <h4>测试一下评论</h4>
-                    <p>这是一个真实的品论，哈哈哈其实不是啦。.asd</p>
+                    <h4>还在开发。。。</h4>
+                    <p>评论功能还在开发中，敬请期待</p>
                     <el-divider><i class="el-icon-chat-line-square"/></el-divider>
                 </div>
-            </a>
+            </div>
         </el-card>
     </div>
 </template>
@@ -36,14 +39,19 @@
     }
 </script>
 
-<style scoped>
+<style>
     .comment-card {
         margin-top: 50px;
     }
+
     .comment-card .comment-item {
         font-size: 14px;
         margin-bottom: 18px;
         font-weight: normal;
+    }
+
+    .comment-card .el-loading-mask {
+        height: 390px;
     }
 
     .panel-title {
@@ -77,6 +85,7 @@
         display: table;
         content: "";
     }
+
     .clearfix:after {
         clear: both
     }

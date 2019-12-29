@@ -5,10 +5,10 @@
         </el-header>
         <el-container class="inner-container">
             <el-aside width="400px" class="aside-wrapper">
-                <HomeAside></HomeAside>
+                <HomeAside v-bind:note_list="note_list"></HomeAside>
             </el-aside>
             <el-main class="main-wrapper">
-                <HomeMain/>
+                <HomeMain v-bind:paper_list="paper_list"/>
             </el-main>
         </el-container>
 
@@ -34,6 +34,21 @@
             HomeAside,
             HomeMain,
             TopBar
+        },
+        data() {
+            return {
+                paper_list: '',
+                note_list: ''
+            };
+        },
+        created: function() {
+            this.$axios.get("/v1/home")
+                .then( response => {
+                    let result = response.data;
+                    this.paper_list = result.data.blog_list;
+                    this.note_list = result.data.note_list;
+                });
+
         }
     }
 </script>
