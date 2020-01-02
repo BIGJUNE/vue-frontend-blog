@@ -1,28 +1,44 @@
 <template>
-    <el-container class="outer-container">
-        <el-header>
-            <TopBar/>
-        </el-header>
-        <router-view ></router-view>
-        <el-footer>
-        </el-footer>
+    <el-container class="inner-container">
+            <el-aside width="400px" class="aside-wrapper">
+                <HomeAside v-bind:note_list="note_list"></HomeAside>
+            </el-aside>
+            <el-main class="main-wrapper">
+                <HomeMain v-bind:paper_list="paper_list"/>
+            </el-main>
     </el-container>
+
 </template>
 
 <script>
-    import TopBar from "@/components/TopBar";
     import Vue from 'vue';
     import ElementUI from 'element-ui';
     import 'element-ui/lib/theme-chalk/index.css';
+    import HomeMain from "../HomeMain";
+    import HomeAside from "../HomeAside";
 
     Vue.use(ElementUI);
 
     export default {
         name: 'Home',
         components: {
-            TopBar
+            HomeAside,
+            HomeMain,
         },
         data() {
+            return {
+                paper_list: '',
+                note_list: ''
+            };
+        },
+        created: function() {
+            this.$axios.get("/v1/home")
+                .then( response => {
+                    let result = response.data;
+                    this.paper_list = result.data.blog_list;
+                    this.note_list = result.data.note_list;
+                });
+
         }
     }
 </script>
@@ -40,25 +56,13 @@
         color: inherit;
     }
 
-    .outer-container {
-        width: 1280px;
-        height: 100%;
-        margin: 0 auto;
-    }
-
     .outer-container .el-header {
         padding: 0;
     }
 
-    .inner-container {
-      width: 1280px;
-      height: 100%;
-      margin: 40px auto;
-    }
-
     .inner-container .el-main {
-      margin: 0 0 0 20px;
-      padding: 0;
+        margin: 0 0 0 20px;
+        padding: 0;
     }
 
     .main-wrapper {

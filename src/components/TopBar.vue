@@ -6,10 +6,10 @@
                 mode="horizontal"
                 text-color="#000">
             <p id="nav-logo">JerryGao的个人博客</p>
-            <el-menu-item index="1">首页</el-menu-item>
-            <el-menu-item index="21">学习分享</el-menu-item>
-            <el-menu-item index="3">日常笔记</el-menu-item>
-            <el-menu-item index="4">About</el-menu-item>
+            <el-menu-item v-on:click="$router.push('/')" index="1">首页</el-menu-item>
+            <el-menu-item v-on:click="$router.push('/papers')" index="2">学习分享</el-menu-item>
+            <el-menu-item v-on:click="$router.push('/notes')" index="3">日常笔记</el-menu-item>
+            <el-menu-item v-on:click="$router.push('/about')" index="4">About</el-menu-item>
 <!--            <el-menu-item index="5">如何搭建这个博客</el-menu-item>-->
             <div class="login-btn-wrapper" v-on:click="test">
                 登录{{testdata}}<i class="el-icon-user el-icon--right"></i>
