@@ -18,7 +18,7 @@ const routes = [
     },
     {
         name: 'PageDetail',
-        path: '/page/:id',
+        path: '/papers/:id',
         component: PageDetail
     },
     {
@@ -40,7 +40,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    routes
+    routes,
+    mode: 'history'
 });
 
 export default router

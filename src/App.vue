@@ -3,7 +3,7 @@
         <el-header>
             <TopBar/>
         </el-header>
-        <router-view ></router-view>
+        <router-view></router-view>
         <el-footer>
         </el-footer>
     </el-container>
@@ -35,8 +35,8 @@
         outline: none;
     }
 
-    a:link, a:visited, a:hover, a:active{
-        text-decoration:none;
+    a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
         color: inherit;
     }
 
@@ -44,6 +44,14 @@
         width: 1280px;
         height: 100%;
         margin: 0 auto;
+        overflow-y: scroll;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+    }
+
+    .outer-container::-webkit-scrollbar { /* WebKit */
+        height: 0;
+        width: 0;
     }
 
     .outer-container .el-header {
@@ -51,14 +59,14 @@
     }
 
     .inner-container {
-      width: 1280px;
-      height: 100%;
-      margin: 40px auto;
+        width: 1280px;
+        height: 100%;
+        margin: 40px auto;
     }
 
     .inner-container .el-main {
-      margin: 0 0 0 20px;
-      padding: 0;
+        margin: 0 0 0 20px;
+        padding: 0;
     }
 
     .main-wrapper {
@@ -69,7 +77,7 @@
         height: 100%;
     }
 
-    div:focus{
-        outline:none;
+    div:focus {
+        outline: none;
     }
 </style>

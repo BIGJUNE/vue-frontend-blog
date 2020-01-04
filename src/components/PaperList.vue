@@ -6,7 +6,8 @@
                           v-bind:tag_list="paper.tag_list"
                           v-bind:comment_count="paper.comment_count"
                           v-bind:read_count="paper.read_count"
-                          v-bind:title="paper.title"/>
+                          v-bind:title="paper.title"
+                          v-bind:id="paper.id"/>
         </el-timeline>
     </div>
 
