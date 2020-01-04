@@ -7,12 +7,12 @@
                 text-color="#000">
             <p id="nav-logo">JerryGao的个人博客</p>
             <el-menu-item v-on:click="$router.push('/')" index="1">首页</el-menu-item>
-            <el-menu-item v-on:click="$router.push('/papers')" index="2">学习分享</el-menu-item>
+            <el-menu-item v-on:click="$router.push('/blog')" index="2">学习分享</el-menu-item>
             <el-menu-item v-on:click="$router.push('/notes')" index="3">日常笔记</el-menu-item>
             <el-menu-item v-on:click="$router.push('/about')" index="4">About</el-menu-item>
-<!--            <el-menu-item index="5">如何搭建这个博客</el-menu-item>-->
+            <!--            <el-menu-item index="5">如何搭建这个博客</el-menu-item>-->
             <div class="login-btn-wrapper" v-on:click="test">
-                登录{{testdata}}<i class="el-icon-user el-icon--right"></i>
+                登录<i class="el-icon-user el-icon--right"></i>
             </div>
             <el-input
                     placeholder="请输入搜索条件">
@@ -29,28 +29,25 @@
         name: 'TopBar',
         data() {
             return {
-                activeIndex: '1',
-                testdata: null,
+                activeIndex: this.GLOBAL.nav_index
             };
         },
         methods: {
-            test : function() {
-                this.$axios.get("http://yapi.demo.qunar.com/mock/37614/v1/papers")
-                .then(response => (this.testdata = response))
-            }
         }
     }
 </script>
 
 <style scoped>
+
     #nav-logo {
-        font-size: 14px;
+        font-size: 18px;
         font-weight: bold;
         line-height: 61px;
         color: #000;
         font-family: "Microsoft YaHei UI";
         float: left;
-        margin-right: 50px;
+        padding: 0;
+        margin: 0 40px;
     }
 
     #top-nav {

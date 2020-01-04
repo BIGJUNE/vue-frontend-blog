@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 // 跳转
 import Home from './components/page/Home'
-import PageDetail from './components/page/PaperDetail'
+import PaperDetail from './components/page/PaperDetail'
 import BlogPage from "./components/page/BlogPage";
 import NotePage from "./components/page/NotePage";
 import About from "./components/page/About";
@@ -17,13 +17,13 @@ const routes = [
         component: Home
     },
     {
-        name: 'PageDetail',
+        name: 'PaperDetail',
         path: '/papers/:id',
-        component: PageDetail
+        component: PaperDetail
     },
     {
         name: 'BlogPage',
-        path: '/papers',
+        path: '/blog',
         component: BlogPage
     },
     {

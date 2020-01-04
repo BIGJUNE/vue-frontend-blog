@@ -3,7 +3,7 @@
         <el-row class="title-row">
             <el-col :span="24">
                 <b class="panel-title">学习分享</b>
-                <el-button class="more-btn">More</el-button>
+                <el-button class="more-btn" v-on:click="$router.push('/blog')">More</el-button>
             </el-col>
         </el-row>
         <div class="share-paper-wrapper">
@@ -110,5 +110,4 @@
         background-color: #3a8ee6;
         color: #fff;
     }
-
 </style>

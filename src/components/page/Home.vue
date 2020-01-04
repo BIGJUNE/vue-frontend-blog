@@ -44,18 +44,6 @@
 </script>
 
 <style>
-    body, p, h1, h2, h3, h4, h5 {
-        margin: 0;
-        padding: 0;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-        outline: none;
-    }
-
-    a:link, a:visited, a:hover, a:active{
-        text-decoration:none;
-        color: inherit;
-    }
-
     .outer-container .el-header {
         padding: 0;
     }

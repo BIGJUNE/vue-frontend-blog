@@ -3,7 +3,8 @@
         <el-card class="note-card">
             <div slot="header" class="clearfix">
                 <span class="panel-title">学习笔记</span>
-                <el-button style="float: right; padding: 3px 0" type="text">查看更多</el-button>
+                <el-button style="float: right; padding: 3px 0" type="text"
+                           v-on:click="$router.push('/notes')">查看更多</el-button>
             </div>
             <span v-for="(note, index) in note_list" :key="index">
             <a href="#">

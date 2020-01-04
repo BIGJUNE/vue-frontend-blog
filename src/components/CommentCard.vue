@@ -61,10 +61,6 @@
         border-left: 5px solid #3a8ee6;
     }
 
-    .comment-card .comment-item {
-
-    }
-
     .comment-item h4 {
         font-size: 16px;
         font-weight: normal;
