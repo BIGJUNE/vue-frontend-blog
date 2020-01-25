@@ -11,9 +11,9 @@
             <el-menu-item v-on:click="$router.push('/notes')" index="3">日常笔记</el-menu-item>
             <el-menu-item v-on:click="$router.push('/about')" index="4">About</el-menu-item>
             <!--            <el-menu-item index="5">如何搭建这个博客</el-menu-item>-->
-            <div class="login-btn-wrapper" v-on:click="test">
-                登录<i class="el-icon-user el-icon--right"></i>
-            </div>
+<!--            <div class="login-btn-wrapper" v-on:click="test">-->
+<!--                登录<i class="el-icon-user el-icon&#45;&#45;right"></i>-->
+<!--            </div>-->
             <el-input
                     placeholder="请输入搜索条件">
                 <i slot="prefix" class="el-input__icon el-icon-search"></i>

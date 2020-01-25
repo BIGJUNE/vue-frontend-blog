@@ -3,14 +3,18 @@
         <el-header>
             <TopBar/>
         </el-header>
-        <router-view></router-view>
+        <el-main class="view-container" >
+            <router-view></router-view>
+        </el-main>
         <el-footer>
+            <Footer></Footer>
         </el-footer>
     </el-container>
 </template>
 
 <script>
     import TopBar from "@/components/TopBar";
+    import Footer from "@/components/Footer"
     import Vue from 'vue';
     import ElementUI from 'element-ui';
     import 'element-ui/lib/theme-chalk/index.css';
@@ -20,7 +24,8 @@
     export default {
         name: 'Home',
         components: {
-            TopBar
+            TopBar,
+            Footer
         },
         data() {
             return {
@@ -58,10 +63,16 @@
         padding: 0;
     }
 
-    .inner-container {
+    .outer-container .inner-container {
         width: 1280px;
         height: 100%;
         margin: 40px auto;
+    }
+
+    .outer-container .view-container {
+        min-height: 500px;
+        padding: 0;
+        margin-top: 60px;
     }
 
     .inner-container .el-main {
@@ -79,5 +90,15 @@
 
     div:focus {
         outline: none;
+    }
+    .outer-container .el-header {
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+    }
+
+    .outer-container .el-footer {
+        padding: 0;
+        height: 100px;
     }
 </style>
