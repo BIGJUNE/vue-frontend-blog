@@ -1,7 +1,7 @@
 <template>
     <div class="footer-wrap">
         <el-divider></el-divider>
-        <a href="#">高俊培的个人网站</a>©2019
+        <router-link to="/">高俊培的个人网站</router-link>©2019
         <p>BUG反馈或其他建议请联系415309574@qq.com</p>
     </div>
 </template>

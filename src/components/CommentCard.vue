@@ -51,7 +51,7 @@
     }
 
     .comment-card .el-loading-mask {
-        height: 390px;
+        height: 440px;
     }
 
     .panel-title {

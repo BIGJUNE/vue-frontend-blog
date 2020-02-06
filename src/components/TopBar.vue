@@ -6,18 +6,18 @@
                 mode="horizontal"
                 text-color="#000">
             <p id="nav-logo">JerryGao的个人博客</p>
-            <el-menu-item v-on:click="$router.push('/')" index="1">首页</el-menu-item>
-            <el-menu-item v-on:click="$router.push('/blog')" index="2">学习分享</el-menu-item>
-            <el-menu-item v-on:click="$router.push('/notes')" index="3">日常笔记</el-menu-item>
-            <el-menu-item v-on:click="$router.push('/about')" index="4">About</el-menu-item>
+            <el-menu-item @click="index" index="1">首页</el-menu-item>
+            <el-menu-item @click="blog" index="2">学习分享</el-menu-item>
+            <el-menu-item @click="note" index="3">日常笔记</el-menu-item>
+            <el-menu-item @click="about" index="4">About</el-menu-item>
             <!--            <el-menu-item index="5">如何搭建这个博客</el-menu-item>-->
 <!--            <div class="login-btn-wrapper" v-on:click="test">-->
 <!--                登录<i class="el-icon-user el-icon&#45;&#45;right"></i>-->
 <!--            </div>-->
-            <el-input
-                    placeholder="请输入搜索条件">
-                <i slot="prefix" class="el-input__icon el-icon-search"></i>
-            </el-input>
+<!--            <el-input-->
+<!--                    placeholder="请输入搜索条件">-->
+<!--                <i slot="prefix" class="el-input__icon el-icon-search"></i>-->
+<!--            </el-input>-->
 
         </el-menu>
     </div>
@@ -29,10 +29,50 @@
         name: 'TopBar',
         data() {
             return {
-                activeIndex: this.GLOBAL.nav_index
+                activeIndex: '1'
             };
         },
+        watch: {
+            $route(to) {
+                switch (to.path) {
+                    case '/': this.activeIndex = '1'; break;
+                    case '/blog': this.activeIndex = '2'; break;
+                    case '/notes': this.activeIndex = '3'; break;
+                    case '/about': this.activeIndex = '4';break;
+                    default: this.activeIndex = '0';
+                }
+            }
+        },
+        created() {
+            switch (this.$route.path) {
+                case '/': this.activeIndex = '1'; break;
+                case '/blog': this.activeIndex = '2'; break;
+                case '/notes': this.activeIndex = '3'; break;
+                case '/about': this.activeIndex = '4';break;
+                default: this.activeIndex = '0';
+            }
+        },
         methods: {
+            index() {
+                if (this.$route.path !== '/') {
+                    this.$router.push('/');
+                }
+            },
+            blog() {
+                if (this.$route.path !== '/blog') {
+                    this.$router.push('/blog');
+                }
+            },
+            note() {
+                if (this.$route.path !== '/notes') {
+                    this.$router.push('/notes');
+                }
+            },
+            about() {
+                if (this.$route.path !== '/about') {
+                    this.$router.push('/about');
+                }
+            }
         }
     }
 </script>

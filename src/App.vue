@@ -6,7 +6,7 @@
         <el-main class="view-container" >
             <router-view></router-view>
         </el-main>
-        <el-footer>
+        <el-footer height="100%">
             <Footer></Footer>
         </el-footer>
     </el-container>
@@ -99,6 +99,5 @@
 
     .outer-container .el-footer {
         padding: 0;
-        height: 100px;
     }
 </style>

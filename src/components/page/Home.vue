@@ -27,8 +27,8 @@
         },
         data() {
             return {
-                paper_list: '',
-                note_list: ''
+                paper_list: [],
+                note_list: []
             };
         },
         created: function() {

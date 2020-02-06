@@ -7,14 +7,14 @@
                            v-on:click="$router.push('/notes')">查看更多</el-button>
             </div>
             <span v-for="(note, index) in note_list" :key="index">
-            <a href="#">
+            <router-link :to="'/papers/' + note.id">
                 <div class="note-item">
                     <b class="note-title">{{ note.title }}</b>
                     <span v-for="(tag, index) in note.tag_list" :key="index">
                         <el-tag class="note-tag">{{ tag }}</el-tag>
                     </span>
                 </div>
-            </a>
+            </router-link>
             </span>
         </el-card>
     </div>

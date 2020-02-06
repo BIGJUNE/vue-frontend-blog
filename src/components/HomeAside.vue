@@ -1,6 +1,6 @@
 <template>
     <div class="home-aside">
-        <NoteCard v-bind:note_list="note_list"></NoteCard>
+        <NoteCard :note_list="note_list"></NoteCard>
         <CommentCard></CommentCard>
     </div>
 </template>

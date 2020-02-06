@@ -1,7 +1,9 @@
 const TAG_MAX_AMOUNT = 3;
 const CURRENT_PAPER_MAX_AMOUNT = 5;
+const NAV_ACTIVE_INDEX = '1';
 
 export default {
     TAG_MAX_AMOUNT,
     CURRENT_PAPER_MAX_AMOUNT,
+    NAV_ACTIVE_INDEX
 }
