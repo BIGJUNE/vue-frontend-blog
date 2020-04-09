@@ -35,6 +35,7 @@
 </script>
 
 <style>
+
     body, p, h1, h2, h3, h4, h5 {
         font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
         outline: none;
@@ -70,7 +71,7 @@
     }
 
     .outer-container .view-container {
-        min-height: 500px;
+        min-height: 800px;
         padding: 0;
         margin-top: 60px;
     }
@@ -94,7 +95,7 @@
     .outer-container .el-header {
         position: fixed;
         top: 0;
-        z-index: 9999;
+        z-index: 999;
     }
 
     .outer-container .el-footer {

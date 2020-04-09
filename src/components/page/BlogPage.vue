@@ -1,6 +1,6 @@
 <template>
     <el-container class="paper-list-container">
-        <PaperList v-bind:paper_list="paper_list"></PaperList>
+        <PaperList v-bind:paper_list="paper_list" :paper_type="paper_type"></PaperList>
     </el-container>
 </template>
 
@@ -14,7 +14,8 @@
         },
         data() {
             return {
-                paper_list: []
+                paper_list: [],
+                paper_type: 'blog'
             }
         },
         created: function () {

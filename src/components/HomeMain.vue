@@ -15,6 +15,7 @@
                               v-bind:comment_count="paper.comment_count"
                               v-bind:read_count="paper.read_count"
                               v-bind:title="paper.title"
+                              v-bind:paper_type="paper.paper_type"
                               v-bind:id="paper.id"/>
             </el-timeline>
         </div>

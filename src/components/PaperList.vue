@@ -7,7 +7,8 @@
                           v-bind:comment_count="paper.comment_count"
                           v-bind:read_count="paper.read_count"
                           v-bind:title="paper.title"
-                          v-bind:id="paper.id"/>
+                          v-bind:id="paper.id"
+                          v-bind:paper_type="paper_type"/>
         </el-timeline>
     </div>
 
@@ -22,7 +23,8 @@
             TimeLineItem
         },
         props: {
-            paper_list: Array
+            paper_list: Array,
+            paper_type: String
         }
     }
 </script>

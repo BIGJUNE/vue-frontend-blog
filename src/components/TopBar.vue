@@ -1,27 +1,45 @@
 <template>
-    <div id="top-nav">
-        <el-menu
-                :default-active="activeIndex"
-                class="nav-list"
-                mode="horizontal"
-                text-color="#000">
-            <p id="nav-logo">JerryGao的个人博客</p>
-            <el-menu-item @click="index" index="1">首页</el-menu-item>
-            <el-menu-item @click="blog" index="2">学习分享</el-menu-item>
-            <el-menu-item @click="note" index="3">日常笔记</el-menu-item>
-            <el-menu-item @click="about" index="4">About</el-menu-item>
-            <!--            <el-menu-item index="5">如何搭建这个博客</el-menu-item>-->
-<!--            <div class="login-btn-wrapper" v-on:click="test">-->
-<!--                登录<i class="el-icon-user el-icon&#45;&#45;right"></i>-->
-<!--            </div>-->
-<!--            <el-input-->
-<!--                    placeholder="请输入搜索条件">-->
-<!--                <i slot="prefix" class="el-input__icon el-icon-search"></i>-->
-<!--            </el-input>-->
-
-        </el-menu>
-    </div>
-
+        <div>
+            <el-menu  id="top-nav"
+                    :default-active="activeIndex"
+                    class="nav-list"
+                    mode="horizontal"
+                    text-color="#000">
+                <p id="nav-logo">JerryGao的个人博客</p>
+                <el-menu-item @click="index" index="1">首页</el-menu-item>
+                <el-menu-item @click="blog" index="2">学习分享</el-menu-item>
+                <el-menu-item @click="note" index="3">日常笔记</el-menu-item>
+                <el-menu-item @click="about" index="4">About</el-menu-item>
+                <!--            <el-menu-item index="5">管理</el-menu-item>-->
+                <div class="login-btn-wrapper" @click="logDialogVisible = true">
+                    登录<i class="el-icon-user el-icon--right"></i>
+                </div>
+                <!--            <el-input-->
+                <!--                    placeholder="请输入搜索条件">-->
+                <!--                <i slot="prefix" class="el-input__icon el-icon-search"></i>-->
+                <!--            </el-input>-->
+            </el-menu>
+            <el-dialog
+                    title="登录"
+                    :visible.sync="logDialogVisible"
+                    :modal-append-to-body="false"
+                    :close-on-click-modal="false"
+                    width="30%"
+                    center>
+                <div class="login-body">
+                    <el-input placeholder="请输入用户名" v-model="username">
+                        <template slot="prepend">帐号</template>
+                    </el-input>
+                    <el-input placeholder="请输入密码" v-model="password" show-password class="input-password">
+                        <template slot="prepend">密码</template>
+                    </el-input>
+                </div>
+                <span slot="footer">
+                    <el-button @click="logDialogVisible = false">取 消</el-button>
+                    <el-button type="primary" @click="logDialogVisible = false">登录</el-button>
+                </span>
+            </el-dialog>
+        </div>
 </template>
 
 <script>
@@ -29,27 +47,48 @@
         name: 'TopBar',
         data() {
             return {
-                activeIndex: '1'
+                activeIndex: '1',
+                logDialogVisible: false,
+                username: '',
+                password: ''
             };
         },
         watch: {
             $route(to) {
                 switch (to.path) {
-                    case '/': this.activeIndex = '1'; break;
-                    case '/blog': this.activeIndex = '2'; break;
-                    case '/notes': this.activeIndex = '3'; break;
-                    case '/about': this.activeIndex = '4';break;
-                    default: this.activeIndex = '0';
+                    case '/':
+                        this.activeIndex = '1';
+                        break;
+                    case '/blog':
+                        this.activeIndex = '2';
+                        break;
+                    case '/notes':
+                        this.activeIndex = '3';
+                        break;
+                    case '/about':
+                        this.activeIndex = '4';
+                        break;
+                    default:
+                        this.activeIndex = '0';
                 }
             }
         },
         created() {
             switch (this.$route.path) {
-                case '/': this.activeIndex = '1'; break;
-                case '/blog': this.activeIndex = '2'; break;
-                case '/notes': this.activeIndex = '3'; break;
-                case '/about': this.activeIndex = '4';break;
-                default: this.activeIndex = '0';
+                case '/':
+                    this.activeIndex = '1';
+                    break;
+                case '/blog':
+                    this.activeIndex = '2';
+                    break;
+                case '/notes':
+                    this.activeIndex = '3';
+                    break;
+                case '/about':
+                    this.activeIndex = '4';
+                    break;
+                default:
+                    this.activeIndex = '0';
             }
         },
         methods: {
@@ -106,6 +145,17 @@
         line-height: 61px;
         float: right;
         outline: none;
+    }
+
+    .login-body {
+        height: 100px;
+        text-align: center;
+    }
+    .login-body .el-input {
+        width: 350px;
+    }
+    .login-body .input-password {
+        margin-top: 25px;
     }
 
     #top-nav .login-btn-wrapper {

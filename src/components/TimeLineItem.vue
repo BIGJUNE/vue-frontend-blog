@@ -1,6 +1,6 @@
 <template>
     <el-timeline-item class="paper-wrapper" v-bind:timestamp="timestamp" placement="top">
-        <router-link :to="'/papers/' + id">
+        <router-link :to="'/' + paper_type + '/' + id">
             <el-card class="paper-card" shadow="hover">
                 <h4 class="paper-title">{{ title }}</h4>
                 <p class="paper-summary">{{ summary }}</p>
@@ -39,7 +39,8 @@
             tag_list: Array,
             comment_count: Number,
             read_count: Number,
-            id: Number
+            id: Number,
+            paper_type: String
         }
     }
 </script>

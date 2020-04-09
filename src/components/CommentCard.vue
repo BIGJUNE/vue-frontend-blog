@@ -5,29 +5,27 @@
             <div slot="header" class="clearfix">
                 <span class="panel-title">最新评论</span>
             </div>
-            <div v-loading="true"
-                    element-loading-text="敬请期待"
-                  element-loading-spinner="el-icon-warning">
-                <div class="comment-item">
-                    <h4>还在开发。。。</h4>
-                    <p>评论功能还在开发中，敬请期待</p>
-                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>
-                </div>
-                <div class="comment-item">
-                    <h4>还在开发。。。</h4>
-                    <p>评论功能还在开发中，敬请期待</p>
-                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>
-                </div>
-                <div class="comment-item">
-                    <h4>还在开发。。。</h4>
-                    <p>评论功能还在开发中，敬请期待</p>
-                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>
-                </div>
-                <div class="comment-item">
-                    <h4>还在开发。。。</h4>
-                    <p>评论功能还在开发中，敬请期待</p>
-                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>
-                </div>
+            <div>
+<!--                <div class="comment-item">-->
+<!--                    <h4>还在开发。。。</h4>-->
+<!--                    <p>评论功能还在开发中，敬请期待</p>-->
+<!--                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>-->
+<!--                </div>-->
+<!--                <div class="comment-item">-->
+<!--                    <h4>还在开发。。。</h4>-->
+<!--                    <p>评论功能还在开发中，敬请期待</p>-->
+<!--                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>-->
+<!--                </div>-->
+<!--                <div class="comment-item">-->
+<!--                    <h4>还在开发。。。</h4>-->
+<!--                    <p>评论功能还在开发中，敬请期待</p>-->
+<!--                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>-->
+<!--                </div>-->
+<!--                <div class="comment-item">-->
+<!--                    <h4>还在开发。。。</h4>-->
+<!--                    <p>评论功能还在开发中，敬请期待</p>-->
+<!--                    <el-divider><i class="el-icon-chat-line-square"/></el-divider>-->
+<!--                </div>-->
             </div>
         </el-card>
     </div>
@@ -41,6 +39,7 @@
 
 <style>
     .comment-card {
+        min-height: 500px;
         margin-top: 50px;
     }
 

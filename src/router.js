@@ -14,11 +14,16 @@ const routes = [
     {
         name: 'Home',
         path: '/',
-        component: Home
+        component: Home,
     },
     {
-        name: 'PaperDetail',
-        path: '/papers/:id',
+        name: 'BlogDetail',
+        path: '/blog/:id',
+        component: PaperDetail
+    },
+    {
+        name: 'NoteDetail',
+        path: '/note/:id',
         component: PaperDetail
     },
     {
