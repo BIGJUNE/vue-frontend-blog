@@ -36,7 +36,7 @@
                 </div>
                 <span slot="footer">
                     <el-button @click="logDialogVisible = false">取 消</el-button>
-                    <el-button type="primary" @click="logDialogVisible = false">登录</el-button>
+                    <el-button type="primary" @click="login">登录</el-button>
                 </span>
             </el-dialog>
         </div>
@@ -111,6 +111,28 @@
                 if (this.$route.path !== '/about') {
                     this.$router.push('/about');
                 }
+            },
+            login() {
+                if (this.username.trim().length === 0) {
+                    alert("帐号不能为空");
+                    return;
+                }
+                if (this.password.trim().length === 0) {
+                    alert("密码不能为空");
+                    return;
+                }
+                this.$axios.post("/v1/user/login", {
+                    username: this.username,
+                    password: this.password
+                }).then(response => {
+                    if (response.data.code === 0) {
+                        alert('登录成功')
+                    } else {
+                        alert(response.data.message)
+                    }
+                }).catch(error => {
+                    alert("服务器错误:" + error)
+                })
             }
         }
     }
